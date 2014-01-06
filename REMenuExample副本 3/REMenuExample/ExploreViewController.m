@@ -23,37 +23,32 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    /*
-    if(ios7){
-        origin_y= NAVBAR_HEIGHT+STATUS_HEIGHT;
-        ios7Height = 0;
-    }else{
-        origin_y=0;
-        ios7Height = 65;
-    }*/
     
     self.title = @"Explore";
 
     self.view.backgroundColor = kBlueColor;
-    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.png"]]];
+    
+    if ([UIDevice currentDevice]) {
+        nil;
+    }
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[[UIImage imageNamed:@"bg.png"]stretchableImageWithLeftCapWidth:100 topCapHeight:100]]];
     
     
     
     if ([[NSFileManager defaultManager]fileExistsAtPath:[kDocumentPath stringByAppendingPathComponent:kDiaryName] isDirectory:nil]) {
         tableAr = [NSArray arrayWithContentsOfFile:[kDocumentPath stringByAppendingPathComponent:kDiaryName]];
-        if (tableAr.count>1) {
-            UITableView *diayTable = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-65)];
-            
-            UIImageView * mainLine = [[UIImageView alloc]initWithFrame:CGRectMake(44.5+78,0,5,kScreenHeight-65)];
-            [mainLine setImage:[UIImage imageNamed:@"mainRwLine@2x.png"]];
-            [self.view addSubview:mainLine];
-            diayTable.backgroundColor = [UIColor clearColor];
-            
-            [self.view addSubview:diayTable];
-            diayTable.separatorStyle = UITableViewCellSeparatorStyleNone;
-            diayTable.delegate = self;
-            diayTable.dataSource = self;
-        }
+        
+        UITableView *diayTable = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-65)];
+        
+        UIImageView * mainLine = [[UIImageView alloc]initWithFrame:CGRectMake(44.5+78,0,5,kScreenHeight-65)];
+        [mainLine setImage:[UIImage imageNamed:@"mainRwLine@2x.png"]];
+        [self.view addSubview:mainLine];
+        diayTable.backgroundColor = [UIColor clearColor];
+        
+        [self.view addSubview:diayTable];
+        diayTable.separatorStyle = UITableViewCellSeparatorStyleNone;
+        diayTable.delegate = self;
+        diayTable.dataSource = self;
         
     }
     
@@ -106,7 +101,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 80;
+    return 84;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{

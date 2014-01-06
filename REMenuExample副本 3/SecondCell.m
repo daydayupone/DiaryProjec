@@ -41,12 +41,21 @@
             [self.dkwysUp setImage:[UIImage imageNamed:@"dkwys-4_03@2x.png"]];
             [self addSubview:self.dkwysUp];
             
-            self.dkwysDown = [[UIImageView alloc]initWithFrame:CGRectMake(58+78,42,kScreenWidth-140,15)];
+            UIImageView *dkwyMedil = [[UIImageView alloc]initWithFrame:CGRectMake(58+78,42,kScreenWidth-140,25)];
+            [dkwyMedil setImage:[UIImage imageNamed:@"dkwys_06@2x.png"]];
+//            dkwyMedil.contentMode = UIViewContentModeScaleAspectFit;
+            [self addSubview:dkwyMedil];
+            
+            self.dkwysDown = [[UIImageView alloc]initWithFrame:CGRectMake(58+78,42+25,kScreenWidth-140,15)];
             [self.dkwysDown setImage:[UIImage imageNamed:@"dkwys_09@2x.png"]];
             [self addSubview:self.dkwysDown];
             
-            self.contentLabel = [[UILabel alloc]initWithFrame:CGRectMake(80+78,25,220,21)];
+            self.contentLabel = [[UITextView alloc]initWithFrame:CGRectMake(80+67,17,kScreenWidth-157,60)];
+            self.contentLabel.editable = NO;
             self.contentLabel.backgroundColor = [UIColor clearColor];
+            self.contentLabel.backgroundColor = [UIColor clearColor];
+            self.contentLabel.textAlignment = NSTextAlignmentJustified;
+            self.contentLabel.font = [UIFont fontWithName:@"经典行书简" size:17];
             [self addSubview:self.contentLabel];
         }else{
             NSLog(@"YES");

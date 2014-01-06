@@ -12,6 +12,8 @@
 @interface AddDiaryViewController (){
     UILabel *timeLabel;
     UITextView *contentTextView;
+    UIImageView *myPicture;
+    
 }
 
 @end
@@ -81,28 +83,69 @@
     [df setDateFormat:@"YYYY.MM.dd HH:mm:ss"];//设置时间格式
     NSString *lastUpdated = [NSString stringWithFormat:@"%@",[df stringFromDate:[NSDate date]]];//获取系统时间
     NSLog(@"%@",lastUpdated);//打印结果2013-6月-11 at 11:34 上午 中国标准时间
-    timeLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 10, 120, 25)];
+    timeLabel = [[UILabel alloc]initWithFrame:CGRectMake(13, 10, 220, 25)];
     [self.view addSubview:timeLabel];
     timeLabel.text = lastUpdated;
     timeLabel.font = [UIFont fontWithName:@"Chalkduster" size:15];
-    timeLabel.backgroundColor = kGreenColor;
+    timeLabel.textColor = [UIColor whiteColor];
+    timeLabel.backgroundColor = [UIColor clearColor];
 }
 
 - (void)contentTextView{
     
-    contentTextView = [[UITextView alloc]initWithFrame:CGRectMake(10, 50, kScreenWidth-20, kScreenHeight-80)];
-    contentTextView.layer.cornerRadius = 3.5;
+    myPicture = [[UIImageView alloc]initWithFrame:CGRectMake(10, 10, contentTextView.frame.size.width-20, 0)];
+    myPicture.contentMode = UIViewContentModeScaleAspectFit;
+    [self.view addSubview:myPicture];
+    
+    contentTextView = [[UITextView alloc]initWithFrame:CGRectMake(10, 50, kScreenWidth-20, kScreenHeight-120)];
+    contentTextView.layer.cornerRadius = 5.0;
     [self.view addSubview:contentTextView];
-    contentTextView.font = [UIFont fontWithName:@"Chalkduster" size:15];
-    contentTextView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.png"]];
+    contentTextView.font = [UIFont fontWithName:@"经典行书简" size:20];//Chalkduster Regular 经典行书简
+    contentTextView.textColor = [UIColor whiteColor];
+    contentTextView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"menu_bar_bg.jpg"]];
     contentTextView.delegate = self;
+    
+}
+
+- (void)getAnPicture{
+    
+    
+    UIImagePickerController *picker = [[UIImagePickerController alloc]init];
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    picker.delegate = self;
+    [self presentModalViewController:picker animated:YES];
     
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	
+    self.view.backgroundColor = kGreenColor;
+    
+    UIButton *pictureBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    pictureBtn.frame = CGRectMake(0, 0, 30, 30);
+    [pictureBtn setImage:[UIImage imageNamed:@"zw_photo@2x.png"] forState:UIControlStateNormal];
+    [pictureBtn addTarget:self action:@selector(getAnPicture) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.titleView = pictureBtn;
+}
+
+#pragma mark -- UIImagePackerCV Delegate
+//- (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+//    
+//    
+//    
+//}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo{
+    
+    myPicture.frame = CGRectMake(0, 0, kScreenWidth, 120);
+    myPicture.image = image;
+    
+    contentTextView.frame = CGRectMake(10, 50+myPicture.frame.size.height, kScreenWidth-20, kScreenHeight-120);
+    
+    [picker dismissModalViewControllerAnimated:YES];
+    
 }
 
 - (void)didReceiveMemoryWarning

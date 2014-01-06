@@ -17,7 +17,10 @@
 {
     NSLog(@"document path == %@",kDocumentPath);
     
-    
+    NSArray* fontArrays = [[NSArray alloc] initWithArray:[UIFont familyNames]];
+    for(NSString* temp in fontArrays) {
+        NSLog(@"Font name  = %@", temp);
+    }
 
     [[UIApplication sharedApplication]setStatusBarStyle:1];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
