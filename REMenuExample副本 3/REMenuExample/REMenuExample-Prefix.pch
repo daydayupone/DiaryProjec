@@ -1,0 +1,35 @@
+//
+// Prefix header for all source files of the 'REMenuExample' target in the 'REMenuExample' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#define kGreenColor [[UIColor alloc]initWithRed:139.0/255.0 green:192.0/255.0 blue:29.0/255.0 alpha:1]
+
+#define kBlueColor [[UIColor alloc]initWithRed:24.0/255.0 green:145.0/255.0 blue:146.0/255.0 alpha:1]
+
+
+#define kScreenWidth [[UIScreen mainScreen] bounds].size.width
+#define kScreenHeight [[UIScreen mainScreen] bounds].size.height
+
+#define ios7 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7)
+#define NAVBAR_HEIGHT 44.0f
+#define TABBAR_HEIGHT 49.0f
+#define STATUS_HEIGHT 20.0f
+
+#define TOP_VIEW_HEIGHT 33.0f
+#define TOP_VIEW_WIDTH 48.0f
+
+#define ARRSIZE(a)      (sizeof(a) / sizeof(a[0]))
+
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #define DEFAULT_thumbImageWidth 260.0f
+    #define DEFAULT_thumbImageHeight 347.0f
+#endif
