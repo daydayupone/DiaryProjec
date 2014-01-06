@@ -153,6 +153,21 @@
 #pragma mark - SaveAction
 - (void)saveMyDiary{
     NSLog(@"saveMyDiary");
+    NSDateFormatter *df = [[NSDateFormatter alloc]init];//实例化设置时间格式的类
+    [df setDateFormat:@"YYYY.MM.dd hh:mm:ss"];//设置时间格式
+    NSString *lastUpdated = [NSString stringWithFormat:@"%@.txt",[df stringFromDate:[NSDate date]]];//获取系统时间
+    NSLog(@"%@",lastUpdated);//打印结果2013-6月-11 at 11:34 上午 中国标准时间
+    
+    //NSString *textPath = [kDocumentPath stringByAppendingString:lastUpdated];
+    NSString *textPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingString:lastUpdated];
+    NSLog(@"path == %@",textPath);
+    BOOL save = [_fastTextView.text writeToFile:textPath atomically:YES];
+    if (save) {
+        NSLog(@"OK");
+    }else{
+        NSLog(@"no");
+    }
+    
 }
 
 
@@ -448,7 +463,7 @@
 
 -(IBAction)bold:(id)sender {
     if (_fastTextView.selectedRange.length>0) {
-        CTFontRef font = CTFontCreateWithName((CFStringRef)[UIFont boldSystemFontOfSize:17].fontName, 17, NULL);
+        CTFontRef font = CTFontCreateWithName((__bridge CFStringRef)[UIFont boldSystemFontOfSize:17].fontName, 17, NULL);
         [_fastTextView.attributedString beginStorageEditing];
         [_fastTextView.attributedString addAttribute:(id)kCTFontAttributeName value:(__bridge id)font range:_fastTextView.selectedRange];
         [_fastTextView.attributedString refreshParagraghInRange:_fastTextView.selectedRange];
@@ -459,7 +474,7 @@
 
 -(IBAction)italic:(id)sender {
     if (_fastTextView.selectedRange.length>0) {
-        CTFontRef font = CTFontCreateWithName((CFStringRef)[UIFont italicSystemFontOfSize:17].fontName, 17, NULL);
+        CTFontRef font = CTFontCreateWithName((__bridge CFStringRef)[UIFont italicSystemFontOfSize:17].fontName, 17, NULL);
         
         [_fastTextView.attributedString beginStorageEditing];
         [_fastTextView.attributedString addAttribute:(id)kCTFontAttributeName value:(__bridge id)font range:_fastTextView.selectedRange];
@@ -471,7 +486,7 @@
 
 -(IBAction)underline:(id)sender {
     if (_fastTextView.selectedRange.length>0) {
-        CTFontRef font = CTFontCreateWithName((CFStringRef)[UIFont systemFontOfSize:17].fontName, 17, NULL);
+        CTFontRef font = CTFontCreateWithName((__bridge CFStringRef)[UIFont systemFontOfSize:17].fontName, 17, NULL);
         [_fastTextView.attributedString beginStorageEditing];
         [_fastTextView.attributedString addAttribute:(id)kCTFontAttributeName value:(__bridge id)font range:_fastTextView.selectedRange];
         

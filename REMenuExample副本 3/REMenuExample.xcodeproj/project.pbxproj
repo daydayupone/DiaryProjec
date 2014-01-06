@@ -224,6 +224,12 @@
 		3EDB1376187709D900CCB548 /* write2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EDB1375187709D900CCB548 /* write2.png */; };
 		3EDB137A18770F2300CCB548 /* setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EDB137918770F2300CCB548 /* setting@2x.png */; };
 		3EDB137C1877103500CCB548 /* senttomail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EDB137B1877103400CCB548 /* senttomail@2x.png */; };
+		978E024D187A4A790037CC44 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 978E024C187A4A790037CC44 /* bg.png */; };
+		978E0250187A57940037CC44 /* TimesTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 978E024F187A57940037CC44 /* TimesTool.m */; };
+		978E0295187A85350037CC44 /* ckwys-2_48@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 978E0294187A85350037CC44 /* ckwys-2_48@2x.png */; };
+		978E0298187A8CB80037CC44 /* AddDiaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 978E0297187A8CB80037CC44 /* AddDiaryViewController.m */; };
+		978E029C187AABD10037CC44 /* CSNotificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 978E029A187AABD10037CC44 /* CSNotificationView.m */; };
+		978E029D187AABD10037CC44 /* CSNotificationView.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 978E029B187AABD10037CC44 /* CSNotificationView.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -478,6 +484,15 @@
 		3EDB1375187709D900CCB548 /* write2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = write2.png; sourceTree = "<group>"; };
 		3EDB137918770F2300CCB548 /* setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "setting@2x.png"; sourceTree = "<group>"; };
 		3EDB137B1877103400CCB548 /* senttomail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "senttomail@2x.png"; sourceTree = "<group>"; };
+		978E024C187A4A790037CC44 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
+		978E024E187A57930037CC44 /* TimesTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimesTool.h; sourceTree = "<group>"; };
+		978E024F187A57940037CC44 /* TimesTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimesTool.m; sourceTree = "<group>"; };
+		978E0294187A85350037CC44 /* ckwys-2_48@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ckwys-2_48@2x.png"; sourceTree = "<group>"; };
+		978E0296187A8CB80037CC44 /* AddDiaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddDiaryViewController.h; sourceTree = "<group>"; };
+		978E0297187A8CB80037CC44 /* AddDiaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddDiaryViewController.m; sourceTree = "<group>"; };
+		978E0299187AABD10037CC44 /* CSNotificationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSNotificationView.h; sourceTree = "<group>"; };
+		978E029A187AABD10037CC44 /* CSNotificationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSNotificationView.m; sourceTree = "<group>"; };
+		978E029B187AABD10037CC44 /* CSNotificationView.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CSNotificationView.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -515,6 +530,8 @@
 				3ED9FFAC18796ED2004D89A7 /* DemoViewController.xib */,
 				3ED9FFAD18796ED2004D89A7 /* DemoViewController.h */,
 				3ED9FFAE18796ED2004D89A7 /* DemoViewController.m */,
+				978E0296187A8CB80037CC44 /* AddDiaryViewController.h */,
+				978E0297187A8CB80037CC44 /* AddDiaryViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -522,6 +539,8 @@
 		30E0F77116D545F7001949EA = {
 			isa = PBXGroup;
 			children = (
+				978E024E187A57930037CC44 /* TimesTool.h */,
+				978E024F187A57940037CC44 /* TimesTool.m */,
 				3ED9FFDE18796FEC004D89A7 /* TextConfig.m */,
 				3ED9FFDF18796FEC004D89A7 /* TextConfig.h */,
 				3ED9FFDB18796FB4004D89A7 /* EmotionAttachmentCell.h */,
@@ -644,6 +663,9 @@
 		3EDB135B1877043000CCB548 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				978E0299187AABD10037CC44 /* CSNotificationView.h */,
+				978E029A187AABD10037CC44 /* CSNotificationView.m */,
+				978E029B187AABD10037CC44 /* CSNotificationView.xcassets */,
 				3EDB13581877040300CCB548 /* HomeCell.h */,
 				3EDB13591877040300CCB548 /* HomeCell.m */,
 				3ED9FE1D1878E9A4004D89A7 /* SecondCell.h */,
@@ -823,6 +845,8 @@
 				3ED900D1187997B4004D89A7 /* tc_001@2x.png */,
 				3ED900D518799B9F004D89A7 /* ckwys-2_55@2x.png */,
 				3ED900D718799BC0004D89A7 /* backBtnImage@2x.png */,
+				978E024C187A4A790037CC44 /* bg.png */,
+				978E0294187A85350037CC44 /* ckwys-2_48@2x.png */,
 			);
 			name = Arts;
 			sourceTree = "<group>";
@@ -936,6 +960,7 @@
 				3ED90064187973CC004D89A7 /* emotion44.png in Resources */,
 				3ED9008D187973CC004D89A7 /* emotion9.png in Resources */,
 				3ED9007D187973CC004D89A7 /* emotion67.png in Resources */,
+				978E0295187A85350037CC44 /* ckwys-2_48@2x.png in Resources */,
 				3ED9005B187973CC004D89A7 /* emotion36.png in Resources */,
 				3ED900A5187973D9004D89A7 /* fontSizeDownMark.png in Resources */,
 				3EDB136E187706B400CCB548 /* num8@2x.png in Resources */,
@@ -988,6 +1013,7 @@
 				3ED90056187973CC004D89A7 /* emotion31.png in Resources */,
 				3ED90086187973CC004D89A7 /* emotion75.png in Resources */,
 				3ED90076187973CC004D89A7 /* emotion60.png in Resources */,
+				978E024D187A4A790037CC44 /* bg.png in Resources */,
 				3ED9005F187973CC004D89A7 /* emotion4.png in Resources */,
 				3ED90059187973CC004D89A7 /* emotion34.png in Resources */,
 				3ED9006F187973CC004D89A7 /* emotion54.png in Resources */,
@@ -1015,6 +1041,7 @@
 				3ED90084187973CC004D89A7 /* emotion73.png in Resources */,
 				3EDB1367187706B400CCB548 /* num1@2x.png in Resources */,
 				3ED9004F187973CC004D89A7 /* emotion25.png in Resources */,
+				978E029D187AABD10037CC44 /* CSNotificationView.xcassets in Resources */,
 				3ED900A7187973D9004D89A7 /* fontSizeUpMark.png in Resources */,
 				3ED900D618799B9F004D89A7 /* ckwys-2_55@2x.png in Resources */,
 				3ED900A1187973D9004D89A7 /* boldMark.png in Resources */,
@@ -1081,6 +1108,7 @@
 				3ED9FFD318796F6A004D89A7 /* TextParagraph.m in Sources */,
 				3ED9FFC018796F5D004D89A7 /* CAParagraphLayer.m in Sources */,
 				3ED9FFDA18796FA0004D89A7 /* UIImage-Extensions.m in Sources */,
+				978E0298187A8CB80037CC44 /* AddDiaryViewController.m in Sources */,
 				3ED9FE6518796795004D89A7 /* REMenuItem.m in Sources */,
 				3ED9FFD418796F6A004D89A7 /* UIFont+TextUtil.m in Sources */,
 				3ED9FE6318796795004D89A7 /* REMenu.m in Sources */,
@@ -1094,7 +1122,9 @@
 				3014283A17205535002C7A33 /* ActivityViewController.m in Sources */,
 				3014283D17205542002C7A33 /* ProfileViewController.m in Sources */,
 				3ED9FFB618796F4D004D89A7 /* FastTextView.m in Sources */,
+				978E0250187A57940037CC44 /* TimesTool.m in Sources */,
 				3014284017205691002C7A33 /* NavigationViewController.m in Sources */,
+				978E029C187AABD10037CC44 /* CSNotificationView.m in Sources */,
 				3ED9FFC118796F5D004D89A7 /* ContentViewTiledLayer.m in Sources */,
 				3ED9FFDD18796FB4004D89A7 /* EmotionAttachmentCell.m in Sources */,
 				3ED9FFD118796F6A004D89A7 /* NSMutableAttributedString+TextUtil.m in Sources */,
@@ -1175,11 +1205,14 @@
 		30E0F79816D545F7001949EA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: 建裕 林 (X6Y86UGQBB)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 建裕 林 (X6Y86UGQBB)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "REMenuExample/REMenuExample-Prefix.pch";
 				INFOPLIST_FILE = "REMenuExample/REMenuExample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "CB43DCAB-B779-4512-90C3-CB90ECF4F0AF";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1187,11 +1220,13 @@
 		30E0F79916D545F7001949EA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: 建裕 林 (X6Y86UGQBB)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "REMenuExample/REMenuExample-Prefix.pch";
 				INFOPLIST_FILE = "REMenuExample/REMenuExample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "CB43DCAB-B779-4512-90C3-CB90ECF4F0AF";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

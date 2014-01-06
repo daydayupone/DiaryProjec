@@ -15,7 +15,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    NSLog(@"document path == %@",kDocumentPath);
     
+    
+
     [[UIApplication sharedApplication]setStatusBarStyle:1];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = [[NavigationViewController alloc] initWithRootViewController:[[HomeViewController alloc] init]];

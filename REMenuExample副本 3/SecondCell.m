@@ -33,8 +33,8 @@
             //[self addSubview:self.mainLine];
             
             self.mainCircle = [[UIButton alloc]initWithFrame:CGRectMake(38+78,25,18,18)];
-            [self.mainCircle setBackgroundImage:[UIImage imageNamed:@"mainRwCircle@2x.png"] forState:UIControlStateNormal];
-            [self.mainCircle setBackgroundImage:[UIImage imageNamed:@"SexOpen@2x.png"] forState:UIControlStateHighlighted];
+            [self.mainCircle setImage:[UIImage imageNamed:@"mainRwCircle@2x.png"] forState:UIControlStateNormal];//mainRwCircle@2x.png SexClose@2x.png
+            [self.mainCircle setImage:[UIImage imageNamed:@"SexOpen@2x.png"] forState:UIControlStateHighlighted];
             [self addSubview:self.mainCircle];
             
             self.dkwysUp = [[UIImageView alloc]initWithFrame:CGRectMake(58+78,17,kScreenWidth-140,25)];
@@ -64,8 +64,8 @@
             [self addSubview:self.mainLine];
             
             self.mainCircle = [[UIButton alloc]initWithFrame:CGRectMake(kScreenWidth *0.38 - 6.5,25,18,18)];
-            [self.mainCircle setBackgroundImage:[UIImage imageNamed:@"mainRwCircle@2x.png"] forState:UIControlStateNormal];
-            [self.mainCircle setBackgroundImage:[UIImage imageNamed:@"SexOpen@2x.png"] forState:UIControlStateHighlighted];
+            [self.mainCircle setImage:[UIImage imageNamed:@"SexClose@2x.png"] forState:UIControlStateNormal];//mainRwCircle@2x.png
+            [self.mainCircle setImage:[UIImage imageNamed:@"SexOpen@2x.png"] forState:UIControlStateHighlighted];
             [self addSubview:self.mainCircle];
             
             self.dkwysUp = [[UIImageView alloc]initWithFrame:CGRectMake(3,17,kScreenWidth *0.38 ,25)];
@@ -84,8 +84,11 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
+    
     [super setSelected:selected animated:animated];
+    NSLog(@"selected");
 
+//    [self.mainCircle setBackgroundColor:kGreenColor];
     // Configure the view for the selected state
 }
 

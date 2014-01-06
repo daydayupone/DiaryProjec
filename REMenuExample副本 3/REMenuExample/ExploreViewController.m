@@ -12,6 +12,7 @@
 @interface ExploreViewController (){
 //    CGFloat origin_y;
 //    CGFloat ios7Height;
+    NSArray *tableAr;
 }
 
 
@@ -34,18 +35,27 @@
     self.title = @"Explore";
 
     self.view.backgroundColor = kBlueColor;
-    UITableView *diayTable = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-65)];
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.png"]]];
     
-    UIImageView * mainLine = [[UIImageView alloc]initWithFrame:CGRectMake(44.5+78,0,5,kScreenHeight-65)];
-    [mainLine setImage:[UIImage imageNamed:@"mainRwLine@2x.png"]];
-    [self.view addSubview:mainLine];
-    diayTable.backgroundColor = [UIColor clearColor];
-
-    [self.view addSubview:diayTable];
-    diayTable.separatorStyle = UITableViewCellSeparatorStyleNone;
-    diayTable.delegate = self;
-    diayTable.dataSource = self;
     
+    
+    if ([[NSFileManager defaultManager]fileExistsAtPath:[kDocumentPath stringByAppendingPathComponent:kDiaryName] isDirectory:nil]) {
+        tableAr = [NSArray arrayWithContentsOfFile:[kDocumentPath stringByAppendingPathComponent:kDiaryName]];
+        if (tableAr.count>1) {
+            UITableView *diayTable = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-65)];
+            
+            UIImageView * mainLine = [[UIImageView alloc]initWithFrame:CGRectMake(44.5+78,0,5,kScreenHeight-65)];
+            [mainLine setImage:[UIImage imageNamed:@"mainRwLine@2x.png"]];
+            [self.view addSubview:mainLine];
+            diayTable.backgroundColor = [UIColor clearColor];
+            
+            [self.view addSubview:diayTable];
+            diayTable.separatorStyle = UITableViewCellSeparatorStyleNone;
+            diayTable.delegate = self;
+            diayTable.dataSource = self;
+        }
+        
+    }
     
     
 }
@@ -54,15 +64,15 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return 10;
+    return tableAr.count;
     
 }
 
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
     static NSString *CellIdentifier = @"Cell";
+    
     SecondCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     
@@ -78,11 +88,12 @@
         }
     }
     
-    cell.timeLabel.text = @"2014.01.04 12:30:33";
-    cell.contentLabel.text = @"kkkkkkxxx";
+    cell.timeLabel.text = [[tableAr objectAtIndex:indexPath.row]objectForKey:@"time"];
+    cell.contentLabel.text = [[tableAr objectAtIndex:indexPath.row]objectForKey:@"content"];
+
     
     cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.frame];
-    cell.selectedBackgroundView.backgroundColor = kBlueColor;
+    cell.selectedBackgroundView.backgroundColor = [UIColor clearColor];
     
     return cell;
     
