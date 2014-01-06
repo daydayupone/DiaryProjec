@@ -28,6 +28,10 @@
             self.timeLabel.font = [UIFont fontWithName:@"Chalkduster" size:10];//AnnabelScript
             [self addSubview:self.timeLabel];
             
+            self.diaryPic = [[UIImageView alloc]initWithFrame:CGRectMake(15, 25, 45, 45)];
+            self.diaryPic.contentMode = UIViewContentModeScaleAspectFit;
+            [self addSubview:self.diaryPic];
+            
             self.mainLine = [[UIImageView alloc]initWithFrame:CGRectMake(44.5+78,15,5,45)];
             [self.mainLine setImage:[UIImage imageNamed:@"mainRwLine@2x.png"]];
             //[self addSubview:self.mainLine];

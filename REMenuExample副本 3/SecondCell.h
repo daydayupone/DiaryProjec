@@ -15,6 +15,7 @@
 @property (nonatomic, strong) UIButton *mainCircle;
 @property (nonatomic, strong) UIImageView *dkwysUp;
 @property (nonatomic, strong) UIImageView *dkwysDown;
+@property (nonatomic, strong) UIImageView *diaryPic;
 @property (nonatomic, strong) UITextView *contentLabel;
 @property (nonatomic, strong) UILabel *timeLabel;
 

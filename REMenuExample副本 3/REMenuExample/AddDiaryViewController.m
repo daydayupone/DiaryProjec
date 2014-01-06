@@ -13,7 +13,7 @@
     UILabel *timeLabel;
     UITextView *contentTextView;
     UIImageView *myPicture;
-    
+    NSData *pictureData;
 }
 
 @end
@@ -27,6 +27,15 @@
         NSMutableArray *diaryAr = [[NSMutableArray alloc]init];
         [mDic setObject:timeLabel.text forKey:@"time"];
         [mDic setObject:contentTextView.text forKey:@"content"];
+        if (pictureData) {
+            NSLog(@"have image");
+            [mDic setObject:pictureData forKey:@"image"];
+        }else{
+            NSLog(@"no image");
+            //[mDic setObject:pictureData forKey:@"image"];
+        }
+        
+        
         [diaryAr insertObject:mDic atIndex:0];
         [diaryAr writeToFile:[kDocumentPath stringByAppendingPathComponent:kDiaryName] atomically:YES];
         
@@ -35,6 +44,13 @@
         NSMutableDictionary *mDic = [[NSMutableDictionary alloc]init];
         [mDic setObject:timeLabel.text forKey:@"time"];
         [mDic setObject:contentTextView.text forKey:@"content"];
+        if (pictureData) {
+            NSLog(@"have image");
+            [mDic setObject:pictureData forKey:@"image"];
+        }else{
+            NSLog(@"no image");
+            //[mDic setObject:pictureData forKey:@"image"];
+        }
         [mArrReports insertObject:mDic atIndex:0];
         [mArrReports writeToFile:[kDocumentPath stringByAppendingPathComponent:kDiaryName] atomically:YES ];
     }
@@ -141,6 +157,8 @@
     
     myPicture.frame = CGRectMake(0, 0, kScreenWidth, 120);
     myPicture.image = image;
+    
+    pictureData = UIImageJPEGRepresentation(image, 1.0);
     
     contentTextView.frame = CGRectMake(10, 50+myPicture.frame.size.height, kScreenWidth-20, kScreenHeight-120);
     

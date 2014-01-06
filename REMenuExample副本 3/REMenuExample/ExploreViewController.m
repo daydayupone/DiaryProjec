@@ -85,6 +85,11 @@
     
     cell.timeLabel.text = [[tableAr objectAtIndex:indexPath.row]objectForKey:@"time"];
     cell.contentLabel.text = [[tableAr objectAtIndex:indexPath.row]objectForKey:@"content"];
+    NSData *picData = [[tableAr objectAtIndex:indexPath.row]objectForKey:@"image"];
+    if (picData) {
+        cell.diaryPic.image = [UIImage imageWithData:picData];
+    }
+    
 
     
     cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.frame];
