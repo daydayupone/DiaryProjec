@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "REMenu.h"
+#import "SVProgressHUD.h"
+#import "MMProgressHUDOverlayView.h"
+#import "MMProgressHUD.h"
 
 @interface NavigationViewController : UINavigationController
 

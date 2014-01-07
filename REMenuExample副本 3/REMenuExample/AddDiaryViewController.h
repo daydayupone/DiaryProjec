@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
+#import "MMProgressHUDOverlayView.h"
+#import "MMProgressHUD.h"
+#import "SVProgressHUD.h"
 
 @interface AddDiaryViewController : UIViewController<UITextViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 

@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "RootViewController.h"
+#import "MMProgressHUDOverlayView.h"
+#import "MMProgressHUD.h"
+#import "SVProgressHUD.h"
+#import "CSNotificationView.h"
 
-@interface HomeViewController : RootViewController
+@interface HomeViewController : RootViewController<UITextViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIScrollViewDelegate>
 
 @end

@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "REMenu.h"
+#import "SVProgressHUD.h"
+#import "MMProgressHUD.h"
+#import "MMProgressHUDOverlayView.h"
 
 @interface RootViewController : UIViewController
 

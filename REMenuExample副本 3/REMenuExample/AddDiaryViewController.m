@@ -22,46 +22,81 @@
 
 - (void)saveMyDiary{
     
-    if (![[NSFileManager defaultManager]fileExistsAtPath:[kDocumentPath stringByAppendingPathComponent:kDiaryName]]) {
-        NSMutableDictionary *mDic = [[NSMutableDictionary alloc]init];
-        NSMutableArray *diaryAr = [[NSMutableArray alloc]init];
-        [mDic setObject:timeLabel.text forKey:@"time"];
-        [mDic setObject:contentTextView.text forKey:@"content"];
-        if (pictureData) {
-            NSLog(@"have image");
-            [mDic setObject:pictureData forKey:@"image"];
-        }else{
-            NSLog(@"no image");
-            //[mDic setObject:pictureData forKey:@"image"];
-        }
+    if ([[UIDevice currentDevice].systemVersion floatValue] <7.0) {
         
+        CGFloat red =  24.0/255.0;
+        CGFloat blue = 146.0/255.0;
+        CGFloat green = 145.0/255.0;
         
-        [diaryAr insertObject:mDic atIndex:0];
-        [diaryAr writeToFile:[kDocumentPath stringByAppendingPathComponent:kDiaryName] atomically:YES];
+        CGColorRef color = CGColorRetain([UIColor colorWithRed:red green:green blue:blue alpha:1.0].CGColor);
         
-    }else{
-        NSMutableArray * mArrReports = [NSMutableArray arrayWithContentsOfFile:[kDocumentPath stringByAppendingPathComponent:kDiaryName]];
-        NSMutableDictionary *mDic = [[NSMutableDictionary alloc]init];
-        [mDic setObject:timeLabel.text forKey:@"time"];
-        [mDic setObject:contentTextView.text forKey:@"content"];
-        if (pictureData) {
-            NSLog(@"have image");
-            [mDic setObject:pictureData forKey:@"image"];
-        }else{
-            NSLog(@"no image");
-            //[mDic setObject:pictureData forKey:@"image"];
-        }
-        [mArrReports insertObject:mDic atIndex:0];
-        [mArrReports writeToFile:[kDocumentPath stringByAppendingPathComponent:kDiaryName] atomically:YES ];
+        [[[MMProgressHUD sharedHUD] overlayView] setOverlayColor:color];
+        
+        CGColorRelease(color);
+        
+        [MMProgressHUD showWithTitle:nil status:@"Save…"];
+        
     }
     
-    [CSNotificationView showInViewController:self
-                                   tintColor:kGreenColor
-                                       image:[UIImage imageNamed:@"ckwys-2_55@2x.png"]
-                                     message:@"     OK    "
-                                    duration:0.8f];
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        
+        if (![[NSFileManager defaultManager]fileExistsAtPath:[kDocumentPath stringByAppendingPathComponent:kDiaryName]]) {
+            NSMutableDictionary *mDic = [[NSMutableDictionary alloc]init];
+            NSMutableArray *diaryAr = [[NSMutableArray alloc]init];
+            [mDic setObject:timeLabel.text forKey:@"time"];
+            [mDic setObject:contentTextView.text forKey:@"content"];
+            if (pictureData) {
+                NSLog(@"have image");
+                [mDic setObject:pictureData forKey:@"image"];
+            }else{
+                NSLog(@"no image");
+                //[mDic setObject:pictureData forKey:@"image"];
+            }
+            
+            
+            [diaryAr insertObject:mDic atIndex:0];
+            [diaryAr writeToFile:[kDocumentPath stringByAppendingPathComponent:kDiaryName] atomically:YES];
+            
+        }else{
+            NSMutableArray * mArrReports = [NSMutableArray arrayWithContentsOfFile:[kDocumentPath stringByAppendingPathComponent:kDiaryName]];
+            NSMutableDictionary *mDic = [[NSMutableDictionary alloc]init];
+            [mDic setObject:timeLabel.text forKey:@"time"];
+            [mDic setObject:contentTextView.text forKey:@"content"];
+            if (pictureData) {
+                NSLog(@"have image");
+                [mDic setObject:pictureData forKey:@"image"];
+            }else{
+                NSLog(@"no image");
+                //[mDic setObject:pictureData forKey:@"image"];
+            }
+            [mArrReports insertObject:mDic atIndex:0];
+            [mArrReports writeToFile:[kDocumentPath stringByAppendingPathComponent:kDiaryName] atomically:YES ];
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if ([[UIDevice currentDevice].systemVersion floatValue]>=7.0) {
+                [CSNotificationView showInViewController:self
+                                               tintColor:kGreenColor
+                                                   image:[UIImage imageNamed:@"ckwys-2_55@2x.png"]
+                                                 message:@"     OK    "
+                                                duration:0.8f];
+            }else{
+                
+                [MMProgressHUD dismissWithSuccess:@"OK!" title:nil afterDelay:0.5];
+                
+            };
+            [contentTextView resignFirstResponder];
+
+            
+        });
+        
+    });
     
-    [contentTextView resignFirstResponder];
+    
+    
+    
+    
+    
     
 }
 
@@ -158,7 +193,7 @@
     myPicture.frame = CGRectMake(0, 0, kScreenWidth, 120);
     myPicture.image = image;
     
-    pictureData = UIImageJPEGRepresentation(image, 1.0);
+    pictureData = UIImageJPEGRepresentation(image, 0.001);
     
     contentTextView.frame = CGRectMake(10, 50+myPicture.frame.size.height, kScreenWidth-20, kScreenHeight-120);
     

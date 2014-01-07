@@ -36,20 +36,33 @@
     
     
     if ([[NSFileManager defaultManager]fileExistsAtPath:[kDocumentPath stringByAppendingPathComponent:kDiaryName] isDirectory:nil]) {
-        tableAr = [NSArray arrayWithContentsOfFile:[kDocumentPath stringByAppendingPathComponent:kDiaryName]];
         
-        UITableView *diayTable = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-65)];
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            
+            tableAr = [NSArray arrayWithContentsOfFile:[kDocumentPath stringByAppendingPathComponent:kDiaryName]];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                UITableView *diayTable = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-65)];
+                
+                UIImageView * mainLine = [[UIImageView alloc]initWithFrame:CGRectMake(44.5+78,0,5,kScreenHeight-65)];
+                [mainLine setImage:[UIImage imageNamed:@"mainRwLine@2x.png"]];
+                [self.view addSubview:mainLine];
+                diayTable.backgroundColor = [UIColor clearColor];
+                
+                [self.view addSubview:diayTable];
+                diayTable.separatorStyle = UITableViewCellSeparatorStyleNone;
+                diayTable.delegate = self;
+                diayTable.dataSource = self;
+                [SVProgressHUD showSuccessWithStatus:@"OK!"];
+
+            });
+        });
         
-        UIImageView * mainLine = [[UIImageView alloc]initWithFrame:CGRectMake(44.5+78,0,5,kScreenHeight-65)];
-        [mainLine setImage:[UIImage imageNamed:@"mainRwLine@2x.png"]];
-        [self.view addSubview:mainLine];
-        diayTable.backgroundColor = [UIColor clearColor];
         
-        [self.view addSubview:diayTable];
-        diayTable.separatorStyle = UITableViewCellSeparatorStyleNone;
-        diayTable.delegate = self;
-        diayTable.dataSource = self;
-        
+       
+    }else{
+        [SVProgressHUD showErrorWithStatus:@":("];
     }
     
     

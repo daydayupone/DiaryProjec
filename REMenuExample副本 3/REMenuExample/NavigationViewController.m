@@ -60,7 +60,11 @@
                                                           image:[UIImage imageNamed:@"rwxqTimeImage@2x.png"]
                                                highlightedImage:nil
                                                          action:^(REMenuItem *item) {
-                                                             NSLog(@"Item: %@", item);
+                                                             
+                                        
+[SVProgressHUD showWithStatus:nil maskType:SVProgressHUDMaskTypeGradient];
+                                                     
+                                                                                                                                                                      NSLog(@"Item: %@", item);
                                                              ExploreViewController *controller = [[ExploreViewController alloc] init];
                                                              [weakSelf setViewControllers:@[controller] animated:NO];
                                                          }];

@@ -232,6 +232,23 @@
 		3EDB1376187709D900CCB548 /* write2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EDB1375187709D900CCB548 /* write2.png */; };
 		3EDB137A18770F2300CCB548 /* setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EDB137918770F2300CCB548 /* setting@2x.png */; };
 		3EDB137C1877103500CCB548 /* senttomail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EDB137B1877103400CCB548 /* senttomail@2x.png */; };
+		3EDC9B45187C3DFD0095A27A /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3EDC9B42187C3DFD0095A27A /* SVProgressHUD.bundle */; };
+		3EDC9B46187C3DFD0095A27A /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC9B44187C3DFD0095A27A /* SVProgressHUD.m */; };
+		3EDC9B59187C40260095A27A /* MMHud.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC9B49187C40260095A27A /* MMHud.m */; };
+		3EDC9B5A187C40260095A27A /* MMProgressHUD+Animations.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC9B4B187C40260095A27A /* MMProgressHUD+Animations.m */; };
+		3EDC9B5B187C40260095A27A /* MMProgressHUD+Class.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC9B4C187C40260095A27A /* MMProgressHUD+Class.m */; };
+		3EDC9B5C187C40260095A27A /* MMProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC9B4E187C40260095A27A /* MMProgressHUD.m */; };
+		3EDC9B5D187C40260095A27A /* MMProgressHUDOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC9B50187C40260095A27A /* MMProgressHUDOverlayView.m */; };
+		3EDC9B5E187C40260095A27A /* MMProgressHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC9B52187C40260095A27A /* MMProgressHUDViewController.m */; };
+		3EDC9B5F187C40260095A27A /* MMProgressHUDWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC9B54187C40260095A27A /* MMProgressHUDWindow.m */; };
+		3EDC9B60187C40260095A27A /* MMRadialProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC9B56187C40260095A27A /* MMRadialProgressView.m */; };
+		3EDC9B61187C40260095A27A /* MMVectorImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC9B58187C40260095A27A /* MMVectorImage.m */; };
+		3EDC9B68187C42AC0095A27A /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EDC9B62187C42AC0095A27A /* 1.png */; };
+		3EDC9B69187C42AC0095A27A /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EDC9B63187C42AC0095A27A /* 2.png */; };
+		3EDC9B6A187C42AC0095A27A /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EDC9B64187C42AC0095A27A /* 3.png */; };
+		3EDC9B6B187C42AC0095A27A /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EDC9B65187C42AC0095A27A /* 4.png */; };
+		3EDC9B6C187C42AC0095A27A /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EDC9B66187C42AC0095A27A /* 5.png */; };
+		3EDC9B6D187C42AC0095A27A /* 6.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EDC9B67187C42AC0095A27A /* 6.png */; };
 		978E024D187A4A790037CC44 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 978E024C187A4A790037CC44 /* bg.png */; };
 		978E0250187A57940037CC44 /* TimesTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 978E024F187A57940037CC44 /* TimesTool.m */; };
 		978E0295187A85350037CC44 /* ckwys-2_48@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 978E0294187A85350037CC44 /* ckwys-2_48@2x.png */; };
@@ -500,6 +517,32 @@
 		3EDB1375187709D900CCB548 /* write2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = write2.png; sourceTree = "<group>"; };
 		3EDB137918770F2300CCB548 /* setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "setting@2x.png"; sourceTree = "<group>"; };
 		3EDB137B1877103400CCB548 /* senttomail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "senttomail@2x.png"; sourceTree = "<group>"; };
+		3EDC9B42187C3DFD0095A27A /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		3EDC9B43187C3DFD0095A27A /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		3EDC9B44187C3DFD0095A27A /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		3EDC9B48187C40260095A27A /* MMHud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMHud.h; sourceTree = "<group>"; };
+		3EDC9B49187C40260095A27A /* MMHud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMHud.m; sourceTree = "<group>"; };
+		3EDC9B4A187C40260095A27A /* MMProgressHUD+Animations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MMProgressHUD+Animations.h"; sourceTree = "<group>"; };
+		3EDC9B4B187C40260095A27A /* MMProgressHUD+Animations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MMProgressHUD+Animations.m"; sourceTree = "<group>"; };
+		3EDC9B4C187C40260095A27A /* MMProgressHUD+Class.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MMProgressHUD+Class.m"; sourceTree = "<group>"; };
+		3EDC9B4D187C40260095A27A /* MMProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMProgressHUD.h; sourceTree = "<group>"; };
+		3EDC9B4E187C40260095A27A /* MMProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMProgressHUD.m; sourceTree = "<group>"; };
+		3EDC9B4F187C40260095A27A /* MMProgressHUDOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMProgressHUDOverlayView.h; sourceTree = "<group>"; };
+		3EDC9B50187C40260095A27A /* MMProgressHUDOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMProgressHUDOverlayView.m; sourceTree = "<group>"; };
+		3EDC9B51187C40260095A27A /* MMProgressHUDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMProgressHUDViewController.h; sourceTree = "<group>"; };
+		3EDC9B52187C40260095A27A /* MMProgressHUDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMProgressHUDViewController.m; sourceTree = "<group>"; };
+		3EDC9B53187C40260095A27A /* MMProgressHUDWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMProgressHUDWindow.h; sourceTree = "<group>"; };
+		3EDC9B54187C40260095A27A /* MMProgressHUDWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMProgressHUDWindow.m; sourceTree = "<group>"; };
+		3EDC9B55187C40260095A27A /* MMRadialProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRadialProgressView.h; sourceTree = "<group>"; };
+		3EDC9B56187C40260095A27A /* MMRadialProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRadialProgressView.m; sourceTree = "<group>"; };
+		3EDC9B57187C40260095A27A /* MMVectorImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMVectorImage.h; sourceTree = "<group>"; };
+		3EDC9B58187C40260095A27A /* MMVectorImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMVectorImage.m; sourceTree = "<group>"; };
+		3EDC9B62187C42AC0095A27A /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		3EDC9B63187C42AC0095A27A /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		3EDC9B64187C42AC0095A27A /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		3EDC9B65187C42AC0095A27A /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
+		3EDC9B66187C42AC0095A27A /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
+		3EDC9B67187C42AC0095A27A /* 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6.png; sourceTree = "<group>"; };
 		978E024C187A4A790037CC44 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
 		978E024E187A57930037CC44 /* TimesTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimesTool.h; sourceTree = "<group>"; };
 		978E024F187A57940037CC44 /* TimesTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimesTool.m; sourceTree = "<group>"; };
@@ -671,6 +714,8 @@
 		3ED9FF9F18796C65004D89A7 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				3EDC9B47187C40260095A27A /* Source */,
+				3EDC9B41187C3DFD0095A27A /* SVProgressHUD */,
 				30E0F7A516D54641001949EA /* REMenu */,
 			);
 			name = Lib;
@@ -875,6 +920,46 @@
 			name = Arts;
 			sourceTree = "<group>";
 		};
+		3EDC9B41187C3DFD0095A27A /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				3EDC9B42187C3DFD0095A27A /* SVProgressHUD.bundle */,
+				3EDC9B43187C3DFD0095A27A /* SVProgressHUD.h */,
+				3EDC9B44187C3DFD0095A27A /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		3EDC9B47187C40260095A27A /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				3EDC9B62187C42AC0095A27A /* 1.png */,
+				3EDC9B63187C42AC0095A27A /* 2.png */,
+				3EDC9B64187C42AC0095A27A /* 3.png */,
+				3EDC9B65187C42AC0095A27A /* 4.png */,
+				3EDC9B66187C42AC0095A27A /* 5.png */,
+				3EDC9B67187C42AC0095A27A /* 6.png */,
+				3EDC9B48187C40260095A27A /* MMHud.h */,
+				3EDC9B49187C40260095A27A /* MMHud.m */,
+				3EDC9B4A187C40260095A27A /* MMProgressHUD+Animations.h */,
+				3EDC9B4B187C40260095A27A /* MMProgressHUD+Animations.m */,
+				3EDC9B4C187C40260095A27A /* MMProgressHUD+Class.m */,
+				3EDC9B4D187C40260095A27A /* MMProgressHUD.h */,
+				3EDC9B4E187C40260095A27A /* MMProgressHUD.m */,
+				3EDC9B4F187C40260095A27A /* MMProgressHUDOverlayView.h */,
+				3EDC9B50187C40260095A27A /* MMProgressHUDOverlayView.m */,
+				3EDC9B51187C40260095A27A /* MMProgressHUDViewController.h */,
+				3EDC9B52187C40260095A27A /* MMProgressHUDViewController.m */,
+				3EDC9B53187C40260095A27A /* MMProgressHUDWindow.h */,
+				3EDC9B54187C40260095A27A /* MMProgressHUDWindow.m */,
+				3EDC9B55187C40260095A27A /* MMRadialProgressView.h */,
+				3EDC9B56187C40260095A27A /* MMRadialProgressView.m */,
+				3EDC9B57187C40260095A27A /* MMVectorImage.h */,
+				3EDC9B58187C40260095A27A /* MMVectorImage.m */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -929,12 +1014,15 @@
 				3ED90072187973CC004D89A7 /* emotion57.png in Resources */,
 				3ED90061187973CC004D89A7 /* emotion41.png in Resources */,
 				3ED9008F187973CC004D89A7 /* emotionImage.plist in Resources */,
+				3EDC9B6B187C42AC0095A27A /* 4.png in Resources */,
 				3ED90062187973CC004D89A7 /* emotion42.png in Resources */,
 				3ED9FE25187900AD004D89A7 /* jkzxBtnDown@2x.png in Resources */,
+				3EDC9B6D187C42AC0095A27A /* 6.png in Resources */,
 				3ED90042187973CC004D89A7 /* emotion13.png in Resources */,
 				3ED900AB187973D9004D89A7 /* strikeThroughMark.png in Resources */,
 				30E0F78816D545F7001949EA /* InfoPlist.strings in Resources */,
 				3ED9007E187973CC004D89A7 /* emotion68.png in Resources */,
+				3EDC9B68187C42AC0095A27A /* 1.png in Resources */,
 				3ED9004C187973CC004D89A7 /* emotion22.png in Resources */,
 				3E2FE67B187B035400EC6C70 /* zw_photo@2x.png in Resources */,
 				3ED9FE36187906CB004D89A7 /* icon5.png in Resources */,
@@ -964,6 +1052,7 @@
 				3ED9003E187973CC004D89A7 /* emotion1.png in Resources */,
 				3ED90080187973CC004D89A7 /* emotion7.png in Resources */,
 				3ED9008C187973CC004D89A7 /* emotion80.png in Resources */,
+				3EDC9B45187C3DFD0095A27A /* SVProgressHUD.bundle in Resources */,
 				3ED9FE43187923D1004D89A7 /* rwxqTimeImage@2x.png in Resources */,
 				3ED9004D187973CC004D89A7 /* emotion23.png in Resources */,
 				3ED9004E187973CC004D89A7 /* emotion24.png in Resources */,
@@ -1009,6 +1098,7 @@
 				3EDB136D187706B400CCB548 /* num7@2x.png in Resources */,
 				3ED90063187973CC004D89A7 /* emotion43.png in Resources */,
 				3ED90052187973CC004D89A7 /* emotion28.png in Resources */,
+				3EDC9B69187C42AC0095A27A /* 2.png in Resources */,
 				3ED9003C187973CC004D89A7 /* emotion.old.plist in Resources */,
 				3ED90041187973CC004D89A7 /* emotion12.png in Resources */,
 				3ED9FE2B187903F6004D89A7 /* rwScheduleTop@2x.png in Resources */,
@@ -1059,6 +1149,7 @@
 				3E2FE679187A49C900EC6C70 /* dkwys_06@2x.png in Resources */,
 				3ED9005D187973CC004D89A7 /* emotion38.png in Resources */,
 				3ED900C8187973E6004D89A7 /* reading_picbox_night.png in Resources */,
+				3EDC9B6C187C42AC0095A27A /* 5.png in Resources */,
 				3ED900D018799757004D89A7 /* wD0ss.png in Resources */,
 				3ED900BC187973E6004D89A7 /* drag-dot@2x.png in Resources */,
 				3ED90068187973CC004D89A7 /* emotion48.png in Resources */,
@@ -1090,6 +1181,7 @@
 				3ED90083187973CC004D89A7 /* emotion72.png in Resources */,
 				3ED900CE187973EF004D89A7 /* b.txt in Resources */,
 				3ED90060187973CC004D89A7 /* emotion40.png in Resources */,
+				3EDC9B6A187C42AC0095A27A /* 3.png in Resources */,
 				3ED900D4187997D9004D89A7 /* tc_002@2x.png in Resources */,
 				3ED9FE3D187911D0004D89A7 /* ckwys-2_68@2x.png in Resources */,
 				3EDB136B187706B400CCB548 /* num5@2x.png in Resources */,
@@ -1131,9 +1223,13 @@
 				3ED9FFD018796F6A004D89A7 /* NSAttributedString+TextUtil.m in Sources */,
 				3ED900DB1879AADF004D89A7 /* SecondCell_.m in Sources */,
 				3ED9FFB318796EF3004D89A7 /* FacialView.m in Sources */,
+				3EDC9B46187C3DFD0095A27A /* SVProgressHUD.m in Sources */,
 				3ED9FFD218796F6A004D89A7 /* TextAttchment.m in Sources */,
+				3EDC9B5A187C40260095A27A /* MMProgressHUD+Animations.m in Sources */,
 				3ED9FE6618796795004D89A7 /* REMenuItemView.m in Sources */,
 				3ED9FFD718796F84004D89A7 /* SlideAttachmentCell.m in Sources */,
+				3EDC9B5D187C40260095A27A /* MMProgressHUDOverlayView.m in Sources */,
+				3EDC9B5C187C40260095A27A /* MMProgressHUD.m in Sources */,
 				3ED9FFCF18796F6A004D89A7 /* FileWrapperObject.m in Sources */,
 				3ED9FFB018796ED2004D89A7 /* DemoViewController.m in Sources */,
 				30E0F7A416D5462E001949EA /* RootViewController.m in Sources */,
@@ -1141,12 +1237,16 @@
 				3ED9FFC018796F5D004D89A7 /* CAParagraphLayer.m in Sources */,
 				3ED9FFDA18796FA0004D89A7 /* UIImage-Extensions.m in Sources */,
 				978E0298187A8CB80037CC44 /* AddDiaryViewController.m in Sources */,
+				3EDC9B5B187C40260095A27A /* MMProgressHUD+Class.m in Sources */,
 				3ED9FE6518796795004D89A7 /* REMenuItem.m in Sources */,
+				3EDC9B59187C40260095A27A /* MMHud.m in Sources */,
 				3ED9FFD418796F6A004D89A7 /* UIFont+TextUtil.m in Sources */,
+				3EDC9B5F187C40260095A27A /* MMProgressHUDWindow.m in Sources */,
 				3ED9FE6318796795004D89A7 /* REMenu.m in Sources */,
 				3EDB135A1877040300CCB548 /* HomeCell.m in Sources */,
 				30142833172053EB002C7A33 /* HomeViewController.m in Sources */,
 				3ED9FFBF18796F5D004D89A7 /* AttributeConfig.m in Sources */,
+				3EDC9B60187C40260095A27A /* MMRadialProgressView.m in Sources */,
 				3ED9FFC218796F5D004D89A7 /* FastTextStorage.m in Sources */,
 				3ED9FE6418796795004D89A7 /* REMenuContainerView.m in Sources */,
 				3ED9FE1F1878E9A4004D89A7 /* SecondCell.m in Sources */,
@@ -1159,6 +1259,8 @@
 				978E029C187AABD10037CC44 /* CSNotificationView.m in Sources */,
 				3ED9FFC118796F5D004D89A7 /* ContentViewTiledLayer.m in Sources */,
 				3ED9FFDD18796FB4004D89A7 /* EmotionAttachmentCell.m in Sources */,
+				3EDC9B5E187C40260095A27A /* MMProgressHUDViewController.m in Sources */,
+				3EDC9B61187C40260095A27A /* MMVectorImage.m in Sources */,
 				3ED9FFD118796F6A004D89A7 /* NSMutableAttributedString+TextUtil.m in Sources */,
 				3ED9FFE018796FEC004D89A7 /* TextConfig.m in Sources */,
 			);
@@ -1237,14 +1339,14 @@
 		30E0F79816D545F7001949EA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: 建裕 林 (X6Y86UGQBB)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 建裕 林 (X6Y86UGQBB)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Lin Jianyu (26HV8YKETS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Lin Jianyu (26HV8YKETS)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "REMenuExample/REMenuExample-Prefix.pch";
 				INFOPLIST_FILE = "REMenuExample/REMenuExample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "CB43DCAB-B779-4512-90C3-CB90ECF4F0AF";
+				PROVISIONING_PROFILE = "79806DAD-2F86-4036-9414-1D05C3AF7B19";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1252,13 +1354,14 @@
 		30E0F79916D545F7001949EA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: 建裕 林 (X6Y86UGQBB)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Lin Jianyu (26HV8YKETS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Lin Jianyu (26HV8YKETS)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "REMenuExample/REMenuExample-Prefix.pch";
 				INFOPLIST_FILE = "REMenuExample/REMenuExample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "CB43DCAB-B779-4512-90C3-CB90ECF4F0AF";
+				PROVISIONING_PROFILE = "79806DAD-2F86-4036-9414-1D05C3AF7B19";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
