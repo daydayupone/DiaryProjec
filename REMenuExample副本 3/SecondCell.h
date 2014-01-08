@@ -16,6 +16,8 @@
 @property (nonatomic, strong) UIImageView *dkwysUp;
 @property (nonatomic, strong) UIImageView *dkwysDown;
 @property (nonatomic, strong) UIImageView *diaryPic;
+@property (nonatomic, strong) UIImageView *emotionPic;
+@property (nonatomic, strong) UIImageView *weatherPic;
 @property (nonatomic, strong) UITextView *contentLabel;
 @property (nonatomic, strong) UILabel *timeLabel;
 

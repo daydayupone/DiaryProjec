@@ -28,6 +28,12 @@
             self.timeLabel.font = [UIFont fontWithName:@"Chalkduster" size:10];//AnnabelScript
             [self addSubview:self.timeLabel];
             
+            self.weatherPic = [[UIImageView alloc]initWithFrame:CGRectMake(10, 25, 30, 30)];
+            [self addSubview:self.weatherPic];
+            
+            self.emotionPic = [[UIImageView alloc]initWithFrame:CGRectMake(55, 40, 40, 40)];
+            [self addSubview:self.emotionPic];
+            
             self.diaryPic = [[UIImageView alloc]initWithFrame:CGRectMake(15, 25, 45, 45)];
             self.diaryPic.contentMode = UIViewContentModeScaleAspectFit;
             [self addSubview:self.diaryPic];
@@ -47,7 +53,6 @@
             
             UIImageView *dkwyMedil = [[UIImageView alloc]initWithFrame:CGRectMake(58+78,42,kScreenWidth-140,25)];
             [dkwyMedil setImage:[UIImage imageNamed:@"dkwys_06@2x.png"]];
-//            dkwyMedil.contentMode = UIViewContentModeScaleAspectFit;
             [self addSubview:dkwyMedil];
             
             self.dkwysDown = [[UIImageView alloc]initWithFrame:CGRectMake(58+78,42+25,kScreenWidth-140,15)];
@@ -85,7 +90,7 @@
             [self.dkwysUp setImage:[UIImage imageNamed:@"tc_001@2x.png"]];
             [self addSubview:self.dkwysUp];
             
-            self.contentLabel = [[UILabel alloc]initWithFrame:CGRectMake(80+78,25,220,21)];
+            self.contentLabel = [[UITextView alloc]initWithFrame:CGRectMake(80+78,25,220,21)];
             self.contentLabel.backgroundColor = [UIColor clearColor];
             [self addSubview:self.contentLabel];
         }

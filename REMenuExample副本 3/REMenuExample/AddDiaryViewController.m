@@ -158,7 +158,17 @@
     
 }
 
-- (void)getAnPicture{
+- (void)getAnPictureByCamera{
+    
+    
+    UIImagePickerController *picker = [[UIImagePickerController alloc]init];
+    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    picker.delegate = self;
+    [self presentModalViewController:picker animated:YES];
+    
+}
+
+- (void)getAnPictureByAlbum{
     
     
     UIImagePickerController *picker = [[UIImagePickerController alloc]init];

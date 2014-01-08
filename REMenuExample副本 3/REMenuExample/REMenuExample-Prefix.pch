@@ -12,6 +12,12 @@
 
 #define kBlueColor [[UIColor alloc]initWithRed:24.0/255.0 green:145.0/255.0 blue:146.0/255.0 alpha:1]
 
+//字典的对应的key
+#define dicContent @"content"
+#define dicEmotion @"emotion"
+#define dicImage @"image"
+#define dicTime @"time"
+#define dicWeather @"weather"
 
 //Document路径
 #define kDocumentPath [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]

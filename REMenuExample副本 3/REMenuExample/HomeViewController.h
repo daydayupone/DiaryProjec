@@ -12,7 +12,11 @@
 #import "MMProgressHUD.h"
 #import "SVProgressHUD.h"
 #import "CSNotificationView.h"
+#import "HMSideMenu.h"
 
 @interface HomeViewController : RootViewController<UITextViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIScrollViewDelegate>
+
+@property (nonatomic, strong) HMSideMenu *emotionMenu;
+@property (nonatomic, strong) HMSideMenu *weatherMenu;
 
 @end
