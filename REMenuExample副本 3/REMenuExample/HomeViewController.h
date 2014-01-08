@@ -18,5 +18,10 @@
 
 @property (nonatomic, strong) HMSideMenu *emotionMenu;
 @property (nonatomic, strong) HMSideMenu *weatherMenu;
+@property (nonatomic, strong) UIButton *emotion;
+@property (nonatomic, strong) UIButton *weather;
+@property (nonatomic, strong) UILabel *timeLabel;
+@property (nonatomic, strong) UITextView *contentTextView;
+@property (nonatomic, strong) UIImageView *myPicture;
 
 @end

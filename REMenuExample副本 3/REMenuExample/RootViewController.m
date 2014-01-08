@@ -23,16 +23,16 @@
     // Here self.navigationController is an instance of NavigationViewController (which is a root controller for the main window)
     //
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"≡" style:UIBarButtonItemStyleBordered target:self.navigationController action:@selector(toggleMenu)];//listBtnImage@2x.png
+    //self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"≡" style:UIBarButtonItemStyleBordered target:self.navigationController action:@selector(toggleMenu)];//listBtnImage@2x.png
     /*
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"listBtnImage@2x.png"] style:UIBarButtonItemStyleDone target:self.navigationController action:@selector(toggleMenu)];
-    
+    */
     UIButton * leftBut = [UIButton buttonWithType:UIButtonTypeCustom];
     [leftBut setImage:[UIImage imageNamed:@"listBtnImage@2x.png"] forState:UIControlStateNormal];
-    leftBut.frame = CGRectMake(0, 0, 41, 40);
+    leftBut.frame = CGRectMake(0, 0, 50, 50);
     [leftBut addTarget:self.navigationController action:@selector(toggleMenu) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:leftBut];
-    */
+    
     
     // Demo label to show current controller class
     //

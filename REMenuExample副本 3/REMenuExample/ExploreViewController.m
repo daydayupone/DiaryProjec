@@ -121,7 +121,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     NSLog(@"indexPath.row == %d",indexPath.row);
-    [self.navigationController pushViewController:[[DetileDiaryViewController alloc]init]  animated:YES];
+    DetileDiaryViewController *detileVC = [[DetileDiaryViewController alloc]init];
+    detileVC.dairyDic = [tableAr objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:detileVC  animated:YES];
     
 }
 

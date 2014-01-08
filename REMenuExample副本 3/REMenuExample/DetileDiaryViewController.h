@@ -10,4 +10,6 @@
 
 @interface DetileDiaryViewController : HomeViewController
 
+@property (nonatomic, strong) NSDictionary *dairyDic;
+
 @end
