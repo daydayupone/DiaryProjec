@@ -47,7 +47,7 @@
     
     REMenuItem *homeItem = [[REMenuItem alloc] initWithTitle:@"Write Diary"
                                                     subtitle:@"Return to write something"
-                                                       image:[UIImage imageNamed:@"yjfkImage@2x.png"]
+                                                       image:[UIImage imageNamed:@"yjfkImage@2x_.png"]
                                             highlightedImage:nil
                                                       action:^(REMenuItem *item) {
                                                           NSLog(@"Item: %@", item);
@@ -57,7 +57,7 @@
     
     REMenuItem *exploreItem = [[REMenuItem alloc] initWithTitle:@"Explore"
                                                        subtitle:@"Explore 47 additional options"
-                                                          image:[UIImage imageNamed:@"rwxqTimeImage@2x.png"]
+                                                          image:[UIImage imageNamed:@"rwxqTimeImage@2x_.png"]
                                                highlightedImage:nil
                                                          action:^(REMenuItem *item) {
                                                              
@@ -71,7 +71,7 @@
     
     REMenuItem *activityItem = [[REMenuItem alloc] initWithTitle:@"Activity"
                                                         subtitle:@"Perform 3 additional activities"
-                                                           image:[UIImage imageNamed:@""]
+                                                           image:[UIImage imageNamed:@"glyphicons_147_folder_lock_.png"]
                                                 highlightedImage:nil
                                                           action:^(REMenuItem *item) {
                                                               NSLog(@"Item: %@", item);
@@ -80,7 +80,7 @@
                                                           }];
     
     REMenuItem *profileItem = [[REMenuItem alloc] initWithTitle:@"Profile"
-                                                          image:[UIImage imageNamed:@"mmxgImage@2x.png"]
+                                                          image:[UIImage imageNamed:@"mmxgImage@2x_.png"]
                                                highlightedImage:nil
                                                          action:^(REMenuItem *item) {
                                                              NSLog(@"Item: %@", item);
@@ -114,6 +114,7 @@
     _menu.shadowOpacity = 1;
     _menu.imageOffset = CGSizeMake(5, -1);
     _menu.waitUntilAnimationIsComplete = NO;
+    _menu.textColor = [UIColor whiteColor];
 }
 
 - (void)toggleMenu

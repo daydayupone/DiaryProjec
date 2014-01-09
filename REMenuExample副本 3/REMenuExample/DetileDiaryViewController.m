@@ -35,11 +35,13 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    [self.emotion setImage:[UIImage imageNamed:[self.dairyDic objectForKey:dicEmotion]] forState:UIControlStateNormal];
-    self.emotion.enabled = NO;
     
-    [self.weather setImage:[UIImage imageNamed:[self.dairyDic objectForKey:dicWeather]] forState:UIControlStateNormal];
+    self.emotion.enabled = NO;
+    [self.emotion setImage:[UIImage imageNamed:[self.dairyDic objectForKey:dicEmotion]] forState:UIControlStateDisabled];
+    
     self.weather.enabled = NO;
+    [self.weather setImage:[UIImage imageNamed:[self.dairyDic objectForKey:dicWeather]] forState:UIControlStateDisabled];
+    
     
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
     backButton.frame = CGRectMake(0, 0, 45, 45);
@@ -68,6 +70,7 @@
 
 - (void)didReceiveMemoryWarning
 {
+    self.myPicture = nil;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

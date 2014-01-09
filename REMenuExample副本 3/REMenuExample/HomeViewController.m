@@ -8,6 +8,7 @@
 
 #import "HomeViewController.h"
 #import "AddDiaryViewController.h"
+#import "UMSocial.h"
 
 @interface HomeViewController (){
     
@@ -117,7 +118,19 @@
 #pragma mark -- shareMyDiary
 - (void)shareMyDiary{
     
-    NSLog(@"shareMyDiary");
+    [UMSocialData defaultData].extConfig.wxMessageType = UMSocialWXMessageTypeApp;
+    //设置手机QQ的AppId，url传nil，将使用友盟的网址
+    [UMSocialConfig setQQAppId:@"100424468" url:nil importClasses:@[[QQApiInterface class],[TencentOAuth class]]];
+    
+    //分享图文样式到微信朋友圈显示字数比较少，只显示分享标题
+    [UMSocialData defaultData].extConfig.title = @"我在用我的日记\nhttp://app.gitom.com";
+    [[UMSocialData defaultData].extConfig setAppUrl:@"http://www.baidu.com"];
+    [UMSocialSnsService presentSnsController:self
+                                      appKey:@"52ac1e8556240b08a00c42bc"
+                                   shareText:self.contentTextView.text
+                                  shareImage:[UIImage imageWithData:pictureData]
+                             shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToTencent,UMShareToRenren,UMShareToDouban,UMShareToWechatSession,UMShareToQzone,UMShareToWechatTimeline,UMShareToEmail,UMShareToSms,UMShareToTwitter,UMShareToFacebook, nil]
+                                    delegate:nil];
     
 }
 
@@ -221,7 +234,7 @@
     self.emotionMenu = [[HMSideMenu alloc] initWithItems:@[twitterItem, emailItem, facebookItem, browserItem,emotion5,emotion6,emotion7]];
     [self.emotionMenu setItemSpacing:5.0f];
     [self.view addSubview:self.emotionMenu];
-    self.emotionMenu.menuPosition = HMSideMenuPositionBottom;
+    self.emotionMenu.menuPosition = HMSideMenuPositionTop;
     
 }
 
@@ -278,7 +291,7 @@
     
 }
 
-#pragma mark -- 保存、分享
+#pragma mark -- 保存
 - (void)saveandshareviews{
     
     UIView *facebookItem = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
@@ -324,6 +337,8 @@
     
 }
 
+
+
 #pragma mark -- 更多操作
 - (void)getmoreaciton{
     
@@ -339,7 +354,7 @@
 {
     [super viewDidLoad];
     
-    self.view.backgroundColor = kGreenColor;
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_1.png"]];
 
     
     
@@ -356,7 +371,7 @@
     
     //时间
     NSDateFormatter *df = [[NSDateFormatter alloc]init];//实例化设置时间格式的类
-    [df setDateFormat:@"YYYY.MM.dd EE"];//设置时间格式
+    [df setDateFormat:@"YYYY.MM.dd EE HH:MM:ss"];//设置时间格式
     NSString *lastUpdated = [NSString stringWithFormat:@"%@",[df stringFromDate:[NSDate date]]];//获取系统时间
     NSLog(@"%@",lastUpdated);//打印结果2013-6月-11 at 11:34 上午 中国标准时间
     self.timeLabel = [[UILabel alloc]initWithFrame:CGRectMake(13, 10, 220, 25)];
@@ -371,20 +386,26 @@
     contentView = [[UIView alloc]initWithFrame:CGRectMake(10,50,kScreenWidth-20, kScreenHeight-120)
                    ];
     contentView.layer.cornerRadius = 5.0;
-    contentView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"menu_bar_bg.jpg"]];
+    contentView.backgroundColor = [UIColor clearColor];
     [baseView addSubview:contentView];
     
-    self.myPicture = [[UIImageView alloc]initWithFrame:CGRectMake(0, 140, contentView.frame.size.width-40, 0)];
-    self.myPicture.backgroundColor = [UIColor clearColor];
-    self.myPicture.contentMode = UIViewContentModeScaleAspectFit;
-    [contentView addSubview:self.myPicture];
+    UIImageView *writView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 25, 25)];
+    [writView setImage:[UIImage imageNamed:@"write.png"]];
+    [contentView addSubview:writView];
+    
     
     self.contentTextView = [[UITextView alloc]initWithFrame:CGRectMake(10, 10, kScreenWidth-40, kScreenHeight-220)];
     [contentView addSubview:self.contentTextView];
-    self.contentTextView.font = [UIFont fontWithName:@"经典行书简" size:20];//Chalkduster Regular 经典行书简
+    self.contentTextView.font = [UIFont fontWithName:@"苏新诗古印宋简" size:20];//Chalkduster Regular 经典行书简
     self.contentTextView.textColor = [UIColor whiteColor];
-    self.contentTextView.backgroundColor = [UIColor clearColor];
+    self.contentTextView.backgroundColor =[UIColor clearColor];
     self.contentTextView.delegate = self;
+    
+    
+    self.myPicture = [[UIImageView alloc]initWithFrame:CGRectMake(0, 10, contentView.frame.size.width,0)];
+    self.myPicture.backgroundColor = [UIColor clearColor];
+    self.myPicture.contentMode = UIViewContentModeScaleAspectFit;
+    [contentView addSubview:self.myPicture];
     
     //隐藏手势
     UITapGestureRecognizer *hideKeyBoard = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(hideKeyBoard)];
@@ -399,20 +420,18 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:rightButton];
 
     
-    //导航条中间图片
+    //导航条中间按钮
     UIButton *pictureBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     pictureBtn.frame = CGRectMake(0, 0, 30, 30);
     [pictureBtn setImage:[UIImage imageNamed:@"zw_photo@2x.png"] forState:UIControlStateNormal];
     [pictureBtn addTarget:self action:@selector(getAnPicture) forControlEvents:UIControlEventTouchUpInside];
-    //ckwys-2_55@2x.png
     UIView *buttonsView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 180, 30)];
     buttonsView.backgroundColor = kGreenColor;
     buttonsView.layer.cornerRadius = 5.0;
     
     //拍照按钮
-    UIButton *up = [[UIButton alloc]initWithFrame:CGRectMake(15, 0, 30, 30)];
+    UIButton *up = [[UIButton alloc]initWithFrame:CGRectMake(15, 4, 26, 20)];
     [up setBackgroundImage:[UIImage imageNamed:@"CameraBtnNormal_.png"] forState:UIControlStateNormal];
-    //[up setBackgroundImage:[UIImage imageNamed:@"CameraBtnNormal_2.png"] forState:UIControlStateHighlighted];
     [up addTarget:self action:@selector(getAnPictureByCamera) forControlEvents:UIControlEventTouchUpInside];
 
     UIView *center = [[UIView alloc]initWithFrame:CGRectMake(59, 0, 1, 29)];
@@ -426,6 +445,7 @@
     UIView *center1 = [[UIView alloc]initWithFrame:CGRectMake(119, 0, 1, 29)];
     center1.backgroundColor = kBlueColor;
     
+    //分享
     UIButton *sharebut = [[UIButton alloc]initWithFrame:CGRectMake(140, 5, 18, 18)];
     [sharebut setImage:[UIImage imageNamed:@"smImage@2x.png"] forState:UIControlStateNormal];
     [sharebut addTarget:self action:@selector(shareMyDiary) forControlEvents:UIControlEventTouchUpInside];
@@ -443,7 +463,7 @@
     emotionString = @"EmotionDefaul_.png";
     [self emotionsViews];
     self.emotion = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.emotion.frame = CGRectMake( 220,13 , 30, 30);
+    self.emotion.frame = CGRectMake(270, 13, 30, 30);
     [self.emotion addTarget:self action:@selector(selectEmotion) forControlEvents:UIControlEventTouchDown];
     [self.emotion setImage:[UIImage imageNamed:@"EmotionDefaul_.png"] forState:UIControlStateNormal];
     [baseView addSubview:self.emotion];
@@ -454,7 +474,7 @@
     weatherString = @"Weather.png";
     [self weatherViews];
     self.weather = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.weather.frame = CGRectMake(260, 13, 30, 30);
+    self.weather.frame = CGRectMake( 230,13 , 30, 30);
     [self.weather setImage:[UIImage imageNamed:@"Weather.png"] forState:UIControlStateNormal];
     [self.weather addTarget:self action:@selector(selectWeather) forControlEvents:UIControlEventTouchDown];
     [baseView addSubview:self.weather];
@@ -463,18 +483,19 @@
 
 
 #pragma mark -- UIImagePackerCV Delegate
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo{
-    
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    NSLog(@"Pick Image");
     CGSize newSize = CGSizeMake(320, 480);
     UIGraphicsBeginImageContext(newSize);
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
     [image drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
     UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
-    self.myPicture.frame = CGRectMake(0, 10, kScreenWidth-60, 120);
+    self.myPicture.frame = CGRectMake(0, 10, contentView.frame.size.width, 120);
     self.myPicture.image = newImage;
-    
-    pictureData = UIImageJPEGRepresentation(image, 0.001);
+    self.myPicture.contentMode = UIViewContentModeScaleAspectFit;
+    pictureData = UIImageJPEGRepresentation(image, 0.000001);
     
     self.contentTextView.frame = CGRectMake(10, 10+self.myPicture.frame.size.height, kScreenWidth-40, kScreenHeight-220);
     

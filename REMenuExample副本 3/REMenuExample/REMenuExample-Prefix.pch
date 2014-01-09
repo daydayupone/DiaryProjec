@@ -25,6 +25,9 @@
 //日记文件名
 #define kDiaryName @"MyDiary.plist"
 
+//用户信息
+#define kUserInfomation @"UserIfo.plist"
+
 #define kScreenWidth [[UIScreen mainScreen] bounds].size.width
 #define kScreenHeight [[UIScreen mainScreen] bounds].size.height
 

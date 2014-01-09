@@ -24,7 +24,7 @@
 		</dict>
 	</dict>
 	<key>CFBundleIdentifier</key>
-	<string>com.gitom.www</string>
+	<string>com.linjianyu.diary</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -41,6 +41,8 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
+		<string>cdmstzi.ttf</string>
+		<string>suhanti.ttf</string>
 		<string>JDJXINSHU.TTF</string>
 	</array>
 	<key>UIPrerenderedIcon</key>
